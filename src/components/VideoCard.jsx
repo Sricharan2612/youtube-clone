@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import { CheckCircle } from '@mui/icons-material';
 
 const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
-    console.log(videoId, snippet);
+    // console.log(videoId, snippet);
     return (
-        <Card sx={{ width: { xs: '100%', md: '315px' }, boxShadow: 'none', borderRadius: '0px' }}>
+        <Card sx={{ boxShadow: 'none', borderRadius: '0px' }}>
             <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
                 <CardMedia
                     image={snippet?.thumbnails?.high?.url}
                     alt={snippet.title}
-                    sx={{ width: 320, height: 180 }}
+                    sx={{ width: '100%', height: 180 }}
                 />
             </Link>
             <CardContent sx={{ background: '#1e1e1e', height: '106px' }}>
